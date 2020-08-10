@@ -1,0 +1,126 @@
+#nim-logo {
+  display: grid;
+  place-items: center;
+  margin-top: 3.5rem;
+  margin-bottom: 1rem;
+
+  img {
+    animation: updown 2.5s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+  }
+
+  @keyframes updown {
+    0% {
+      transform: translateY(1rem);
+    }
+    50% {
+      transform: translateY(-1rem);
+    }
+    100% {
+      transform: translateY(1rem);
+    }
+  }
+}
+
+#releases {
+  display: flex;
+  justify-content: center;
+
+  .release-btn {
+    font-size: 1rem;
+    flex: 0 1 11em;
+    margin: 1.5em;
+    padding: 0.5em;
+    font-family: 'JetBrains Mono';
+    text-align: center;
+    color: white;
+    background-color: rgb(206, 206, 206);
+    border-radius: 1em;
+    box-shadow: none;
+
+    &:hover {
+      background-color: #363636;
+      transition: ease-in-out 0.2s;
+    }
+  }
+
+  @media only screen and (max-width: 800px) {
+    flex-direction: column;
+    align-items: center;
+
+    .release-btn {
+      flex: 0 1 1.2em;
+      min-width: 15em;
+      max-width: 20em;
+      line-height: 1.2em;
+
+      &:first-child {
+        margin: 1em 3em 0.5em 3em;
+      }
+      &:last-child {
+        margin: 0 3em 4em 3em;
+      }
+    }
+  }
+}
+
+h1 {
+  font-size: 2.2rem;
+  margin-bottom: 2em;
+  font-family: 'JetBrains Mono';
+  text-align: center;
+  font-weight: bold;
+  color: rgb(63, 63, 63);
+
+  @media only screen and (max-width: 800px) {
+    margin: 0 0.5em 2em 0.5em;
+    font-size: 2.5rem;
+  }
+}
+
+#explain {
+  margin: 0 auto 2em auto;
+  padding: 0 1.5em;
+  max-width: 44ch;
+  font-weight: normal;
+  font-size: 1.4rem;
+}
+
+#floating-nav {
+  z-index: 100;
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+
+  & > a {
+    font-size: 2.5rem;
+  }
+
+  @media only screen and (max-width: 800px) {
+    position: absolute;
+  }
+}
+
+#short-nav {
+  display: flex;
+  justify-content: center;
+
+  a {
+    font-size: 1.5rem;
+    flex: 0 1 13ch;
+    margin: 0 1.3em;
+    padding: 0.35em;
+  }
+
+  @media only screen and (max-width: 800px) {
+    flex-direction: column;
+    margin: 0 1em;
+
+    a {
+      flex: 0 1 1.5em;
+      margin: 0.3em 0.3em;
+      line-height: 1.5em;
+    }
+  }
+}
