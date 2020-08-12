@@ -11,6 +11,9 @@ You can load css by `import 'css/path'` in js or by `<link rel="stylesheet" href
 script tag can't have `defer` or `type="module"` attribute.
 (technically it can but live reload will not work.)
 
+Remove main field in package.json to build.
+https://github.com/parcel-bundler/parcel/issues/3442#issuecomment-559990105
+
 ## Reference
 
 [Official Doc v2 (incomplete)](https://v2.parceljs.org)

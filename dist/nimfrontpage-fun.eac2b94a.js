@@ -416,17 +416,19 @@ require("prismjs/components/prism-nim");
 
 var _codeflask = _interopRequireDefault(require("codeflask"));
 
+var _httputils = _interopRequireDefault(require("./js/httputils.js"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-const playground = new _codeflask.default('.code-editor', {
+const editor = new _codeflask.default('.code-editor', {
   language: 'nim',
   defaultTheme: false,
-  handleNewLineIndentation: true,
+  tabSize: 2,
   handleTabs: true,
-  tabSize: 2
+  handleNewLineIndentation: true
 });
-playground.addLanguage('nim', _prismCore.default.languages['nim']);
-playground.updateCode(`import strutils, strformat
+editor.addLanguage('nim', _prismCore.default.languages['nim']);
+editor.updateCode(`import strutils, strformat
 
 let
   hello = "hello"
@@ -440,7 +442,38 @@ proc helloWorld() =
   echo toUpper(fmt"{hello}, {world}!", 0 .. 0)
 
 helloWorld()`);
-},{"prismjs/components/prism-core":"ddec830982e7386488c98576cc3876af","prismjs/components/prism-nim":"4b7f977d31131df400460d43fe5166bb","codeflask":"eb7fcf843141ff489729b8d766829132"}],"ddec830982e7386488c98576cc3876af":[function(require,module,exports) {
+const compileUrl = 'https://play.nim-lang.org/compile';
+var isCompiling = false;
+const runBtn = document.getElementById('run-nim');
+
+runBtn.onclick = () => {
+  if (isCompiling) {
+    runBtn.textContent = 'Running...';
+    return;
+  }
+
+  isCompiling = true;
+
+  _httputils.default.sendHttpRequestPost(compileUrl, {
+    code: editor.getCode(),
+    compilationTarget: 'c',
+    outputFormat: 'HTML' // version: 'latest',
+
+  }).then((httpStatus, response) => {
+    if (httpStatus == 200) {
+      runBtn.textContent = 'Run';
+      isCompiling = false;
+      const jsonResponse = JSON.parse(response);
+      const log = jsonResponse.log;
+      console.log(log);
+    } else {
+      console.log(`httpStatus: ${httpStatus}`);
+    }
+  }).catch(() => {
+    console.log('Error has occurred while trying to compile it!');
+  });
+};
+},{"prismjs/components/prism-core":"ddec830982e7386488c98576cc3876af","prismjs/components/prism-nim":"4b7f977d31131df400460d43fe5166bb","codeflask":"eb7fcf843141ff489729b8d766829132","./js/httputils.js":"35f7ef038e808f52f71d717c675255f7"}],"ddec830982e7386488c98576cc3876af":[function(require,module,exports) {
 var global = arguments[3];
 
 /// <reference lib="WebWorker"/>
@@ -2392,6 +2425,53 @@ var global = arguments[3];
     this.elTextarea.removeAttribute("readonly");
   }, d;
 });
+},{}],"35f7ef038e808f52f71d717c675255f7":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.sendHttpRequest = sendHttpRequest;
+exports.sendHttpRequestPost = sendHttpRequestPost;
+exports.default = void 0;
+
+// TODO: Use fetch API instead?
+function sendHttpRequest(method, url, data) {
+  console.log('sending a request...');
+  return new Promise((resolve, reject) => {
+    const xhr = new XMLHttpRequest();
+    xhr.open(method, url, true);
+    xhr.responseType = 'json';
+
+    if (data) {
+      xhr.setRequestHeader('Content-Type', 'application/json'); // unnecessary?
+    }
+
+    xhr.onload = () => {
+      if (xhr.status >= 400) {
+        reject(xhr.status, xhr.response);
+      } else {
+        resolve(xhr.status, xhr.response);
+      }
+    };
+
+    xhr.onerror = () => {
+      reject(0, '');
+    };
+
+    xhr.send(JSON.stringify(data));
+  });
+}
+
+function sendHttpRequestPost(url, headers, data) {
+  return sendHttpRequest('POST', url, headers, data);
+}
+
+var _default = {
+  sendHttpRequest,
+  sendHttpRequestPost
+};
+exports.default = _default;
 },{}]},{},["e86f25bd3e5d3ff6a2b4c50e403f9823","c00e607576b6da73f3471278d158f50f"], null)
 
 //# sourceMappingURL=nimfrontpage-fun.eac2b94a.js.map

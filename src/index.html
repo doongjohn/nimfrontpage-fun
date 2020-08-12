@@ -84,16 +84,10 @@
     <div id="content">
       <div class="nim-code">
         <div class="code-editor-up">
-          <button id="nim-example1-btn" class="btn-yellow">Example 1</button>
-          <button id="nim-example2-btn" class="btn-yellow">Example 2</button>
-          <button id="nim-example3-btn" class="btn-yellow">Example 3</button>
-          <a
-            class="btn-yellow"
-            href="http://rosettacode.org/wiki/Category:Nim"
-            target="_blank"
-          >
-            More examples
-          </a>
+          <div class="label-yellow-filled">Examples</div>
+          <button id="nim-example1-btn" class="btn-yellow">1</button>
+          <button id="nim-example2-btn" class="btn-yellow">2</button>
+          <button id="nim-example3-btn" class="btn-yellow">3</button>
         </div>
         <pre id="nim-example1"><code class="language-nim">import strformat
 
@@ -143,12 +137,25 @@ const
 for o in opcodes:
   echo o</code></pre>
       </div>
+      <a
+        class="btn-pink"
+        href="http://rosettacode.org/wiki/Category:Nim"
+        target="_blank"
+      >
+        More examples at Rosetta Code
+      </a>
 
       <div class="nim-code">
         <div class="code-editor-up">
           <div class="label-yellow-filled">Try online</div>
         </div>
         <div class="code-editor"></div>
+        <div class="code-editor-down">
+          <!-- nim-playground server is down... -->
+          <button id="run-nim" class="btn-pink" style="display: none;">
+            Run
+          </button>
+        </div>
       </div>
 
       <h2>{. efficient .}</h2>

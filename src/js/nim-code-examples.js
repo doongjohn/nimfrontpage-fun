@@ -1,4 +1,4 @@
-const colorMain = '#ffe0a6';
+const colorMain = '#ffdc9a';
 const colorMainStrong = '#f5cb7d';
 
 const setStylesOnElement = (element, styles) => {

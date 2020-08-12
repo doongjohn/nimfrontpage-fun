@@ -408,7 +408,7 @@ function hmrAcceptRun(bundle, id) {
   acceptedAssets[id] = true;
 }
 },{}],"0cfe32c33eee22d8ad98ef1a86274960":[function(require,module,exports) {
-const colorMain = '#ffe0a6';
+const colorMain = '#ffdc9a';
 const colorMainStrong = '#f5cb7d';
 
 const setStylesOnElement = (element, styles) => {

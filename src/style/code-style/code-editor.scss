@@ -6,24 +6,26 @@
   .codeflask {
     position: relative;
     background-color: #fafafa;
+    min-height: 3.3em;
 
     .codeflask__textarea {
       z-index: 1;
       color: transparent;
       overflow-y: hidden;
 
+      // ------------------------------
       // same as prism theme
       font-size: 1.1rem;
       padding: 1em;
       font-family: 'JetBrains Mono';
       line-height: 1.5em;
       border: 0.2rem solid $color-main;
-      // -------------------------
 
       &::selection {
         background: #cceae7;
         color: #263238;
       }
+      // ------------------------------
     }
 
     .codeflask__pre {

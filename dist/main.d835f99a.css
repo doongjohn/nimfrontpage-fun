@@ -7,7 +7,7 @@
   font-display: swap;
 }
 pre[class*=language-] {
-  border: 0.2rem solid #ffe0a6;
+  border: 0.2rem solid #ffdc9a;
 }
 
 code[class*=language-],
@@ -224,6 +224,7 @@ pre[class*=language-] {
 .code-editor .codeflask {
   position: relative;
   background-color: #fafafa;
+  min-height: 3.3em;
 }
 .code-editor .codeflask .codeflask__textarea {
   z-index: 1;
@@ -233,7 +234,7 @@ pre[class*=language-] {
   padding: 1em;
   font-family: "JetBrains Mono";
   line-height: 1.5em;
-  border: 0.2rem solid #ffe0a6;
+  border: 0.2rem solid #ffdc9a;
 }
 .code-editor .codeflask .codeflask__textarea::selection {
   background: #cceae7;
@@ -313,11 +314,11 @@ a {
 }
 .btn-yellow {
   color: #f5cb7d;
-  border-color: #ffe0a6;
+  border-color: #ffdc9a;
 }
 .btn-yellow:hover {
   color: white;
-  background-color: #ffe0a6;
+  background-color: #ffdc9a;
   transition: ease-in-out 0.2s;
 }
 .btn-pink {
@@ -347,8 +348,8 @@ a {
 }
 .label-yellow-filled {
   color: white;
-  background-color: #ffe0a6;
-  border-color: #ffe0a6;
+  background-color: #ffdc9a;
+  border-color: #ffdc9a;
 }
 
 #content {
@@ -377,7 +378,7 @@ a {
 }
 #content > a {
   display: block;
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   margin: 0 auto 0 auto;
   padding: 0.6em;
   width: max-content;

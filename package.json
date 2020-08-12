@@ -2,7 +2,6 @@
   "name": "nimfrontpage-fun",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "scripts": {
     "start": "parcel serve ./src/index.html ./src/page/**/*.html --no-cache",
     "build": "parcel build ./src/index.html ./src/page/**/*.html --no-cache"
