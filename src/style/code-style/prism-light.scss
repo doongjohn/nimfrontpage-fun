@@ -1,5 +1,5 @@
 pre[class*='language-'] {
-  border: 0.2rem solid rgb(255, 224, 166);
+  border: 0.2rem solid $color-main;
 }
 
 code[class*='language-'],
@@ -15,9 +15,9 @@ pre[class*='language-'] {
   font-size: 1.1rem;
   line-height: 1.5em;
 
-  -moz-tab-size: 4;
-  -o-tab-size: 4;
-  tab-size: 4;
+  -moz-tab-size: 2;
+  -o-tab-size: 2;
+  tab-size: 2;
 
   -webkit-hyphens: none;
   -moz-hyphens: none;
@@ -50,8 +50,8 @@ pre[class*='language-'] ::selection {
 pre[class*='language-'] {
   overflow: auto;
   position: relative;
-  margin: 0.5em 0;
-  padding: 1.25em 1em;
+  margin: 0;
+  padding: 1em;
 }
 
 .language-css > code,

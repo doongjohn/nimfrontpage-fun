@@ -35,12 +35,12 @@
     font-family: 'JetBrains Mono';
     text-align: center;
     color: white;
-    background-color: rgb(206, 206, 206);
+    background-color: #cecece;
     border-radius: 1em;
     box-shadow: none;
 
     &:hover {
-      background-color: #363636;
+      background-color: #b8b8b8;
       transition: ease-in-out 0.2s;
     }
   }
@@ -79,8 +79,8 @@ h1 {
   }
 }
 
-#explain {
-  margin: 0 auto 2em auto;
+#what-is-nim {
+  margin: 0 auto 3em auto;
   padding: 0 1.5em;
   max-width: 44ch;
   font-weight: normal;
@@ -105,6 +105,7 @@ h1 {
 #short-nav {
   display: flex;
   justify-content: center;
+  margin-bottom: 3em;
 
   a {
     font-size: 1.5rem;

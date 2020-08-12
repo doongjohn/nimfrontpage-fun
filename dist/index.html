@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nim</title>
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/4392c785a1.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="/main.d835f99a.css">
+    <script type="module" src="/nimfrontpage-fun.eac2b94a.js"></script>
+  </head>
+
+  <body>
+    <div id="deco">
+      <img class="deco-yellow-line no-drag" src="/yellow-line.28a76fee.svg" alt="">
+    </div>
+
+    <div id="floating-nav">
+      <a class="btn-pink-textonly" href="https://github.com/nim-lang/Nim" target="_blank">
+        <i class="fab fa-github-square"></i>
+      </a>
+    </div>
+
+    <div id="nim-logo" class="no-select">
+      <img class="no-drag" src="https://forum.nim-lang.org/images/logo.png" alt="nim">
+    </div>
+
+    <div id="releases">
+      <a id="stable-release" class="no-select release-btn" href="https://nim-lang.org/blog/2020/07/30/versions-126-and-108-released.html" target="_blank">Stable v1.2.6</a>
+      <a id="nightly-release" class="no-select release-btn" href="https://github.com/nim-lang/nightlies/releases" target="_blank">Nightly 08.07</a>
+    </div>
+
+    <h1>{. efficient, expressive, elegant .}</h1>
+    <div id="what-is-nim">
+      Nim is a statically typed compiled systems programming language. It
+      combines successful concepts from mature languages like Python, Ada and
+      Modula.
+    </div>
+
+    <nav id="short-nav">
+      <a class="btn-pink" href="https://nim-lang.org/install.html" target="_blank">DOWNLOAD</a>
+      <a class="btn-pink" href="https://nim-lang.org/learn.html" target="_blank">LEARN</a>
+      <a class="btn-pink" href="https://forum.nim-lang.org" target="_blank">FORUM</a>
+    </nav>
+
+    <div id="content">
+      <div class="nim-code">
+        <div class="code-editor-up">
+          <button id="nim-example1-btn" class="btn-yellow">Example 1</button>
+          <button id="nim-example2-btn" class="btn-yellow">Example 2</button>
+          <button id="nim-example3-btn" class="btn-yellow">Example 3</button>
+          <a class="btn-yellow" href="http://rosettacode.org/wiki/Category:Nim" target="_blank">
+            More examples
+          </a>
+        </div>
+        <pre id="nim-example1"><code class="language-nim">import strformat
+
+type
+  Person = object
+    name: string
+    age: Natural # Ensures the age is positive
+
+let people = [
+  Person(name: "John", age: 45),
+  Person(name: "Kate", age: 30)
+]
+
+for person in people:
+  # Type-safe string interpolation,
+  # evaluated at compile time.
+  echo(fmt"{person.name} is {person.age} years old")</code></pre>
+        <pre id="nim-example2"><code class="language-nim"># Thanks to Nim's 'iterator' and 'yield' constructs,
+# iterators are as easy to write as ordinary
+# functions. They are compiled to inline loops.
+iterator oddNumbers[Idx, T](a: array[Idx, T]): T =
+  for x in a:
+    if x mod 2 == 1:
+      yield x
+
+for odd in oddNumbers([3, 6, 9, 12, 15, 18]):
+  echo odd</code></pre>
+        <pre id="nim-example3"><code class="language-nim"># Use Nim's macro system to transform a dense
+# data-centric description of x86 instructions
+# into lookup tables that are used by
+# assemblers and JITs.
+import macros, strutils
+
+macro toLookupTable(data: static[string]): untyped =
+  result = newTree(nnkBracket)
+  for w in data.split(';'):
+    result.add newLit(w)
+
+const
+  data = "mov;btc;cli;xor"
+  opcodes = toLookupTable(data)
+
+for o in opcodes:
+  echo o</code></pre>
+      </div>
+
+      <div class="nim-code">
+        <div class="code-editor-up">
+          <div class="label-yellow-filled">Try online</div>
+        </div>
+        <div class="code-editor"></div>
+      </div>
+
+      <h2>{. efficient .}</h2>
+      <div>
+        <i class="fas fa-angle-right"></i>
+        Nim generates native dependency-free executables, not dependent on a
+        virtual machine, which are small and allow easy redistribution.
+      </div>
+      <div>
+        <i class="fas fa-angle-right"></i>
+        The Nim compiler and the generated executables support all major
+        platforms like Windows, Linux, BSD and macOS.
+      </div>
+      <div>
+        <i class="fas fa-angle-right"></i>
+        Nim's memory management is deterministic and customizable with
+        destructors and move semantics, inspired by C++ and Rust.
+      </div>
+      <div>
+        <i class="fas fa-angle-right"></i>
+        It is well-suited for embedded, hard-realtime systems. Modern concepts
+        like zero-overhead iterators and compile-time evaluation of user-defined
+        functions, in combination with the preference of value-based datatypes
+        allocated on the stack, lead to extremely performant code.
+      </div>
+      <div>
+        <i class="fas fa-angle-right"></i>
+        Support for various backends: it compiles to C, C++ or JavaScript so
+        that Nim can be used for all backend and frontend needs.
+      </div>
+
+      <h2>{. expressive .}</h2>
+      <div>
+        <i class="fas fa-angle-right"></i>
+        Nim is self-contained: the compiler and the standard library are
+        implemented in Nim.
+      </div>
+      <div>
+        <i class="fas fa-angle-right"></i>
+        Nim has a powerful macro system which allows direct manipulation of the
+        AST, offering nearly unlimited opportunities.
+      </div>
+
+      <h2>{. elegant .}</h2>
+      <div>
+        <i class="fas fa-angle-right"></i>
+        Macros cannot change Nim's syntax because there is no need for it — the
+        syntax is flexible enough.
+      </div>
+      <div>
+        <i class="fas fa-angle-right"></i>
+        Modern type system with local type inference, tuples, generics and sum
+        types.
+      </div>
+      <div>
+        <i class="fas fa-angle-right"></i>
+        Statements are grouped by indentation but can span multiple lines.
+      </div>
+
+      <a class="btn-pink" href="/page/someotherpage.html">
+        to some other page.
+      </a>
+    </div>
+
+    <script src="/nim-code-examples.c0e9f217.js"></script>
+  </body>
+</html>

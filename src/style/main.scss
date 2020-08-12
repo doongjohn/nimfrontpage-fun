@@ -1,4 +1,7 @@
 @import 'font';
-@import 'prism';
+@import 'variables';
+@import 'code-style/prism-light';
+@import 'code-style/code-editor';
 @import 'common';
+@import 'content';
 @import 'front-page';

@@ -1,4 +1,4 @@
-# Rollup.js Learn
+# Rollup.js
 
 By default Rollup is very minimal compare to Parcel.  
 But it can be very powerful by using plugins.
@@ -7,7 +7,12 @@ But it can be very powerful by using plugins.
 
 When importing a js, css, etc... don't forget to **put leading "./"** or it won't do anything.
 
-## Rollup.js Reference
+```jsonc
+"build": "rollup -c",
+"dev": "rollup -c -w" // watch files and rebuild
+```
+
+## Reference
 
 - [Local Install](https://rollupjs.org/guide/en/#installing-rollup-locally)
 - [CLI flags](https://rollupjs.org/guide/en/#command-line-flags)

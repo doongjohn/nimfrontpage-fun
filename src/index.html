@@ -11,9 +11,8 @@
       crossorigin="anonymous"
     ></script>
 
-    <!-- Bundle -->
-    <link rel="stylesheet" href="dist/bundle.css" />
-    <script src="dist/bundle.js" type="module"></script>
+    <link rel="stylesheet" href="style/main.scss" />
+    <script type="module" src="index.js"></script>
   </head>
 
   <body>
@@ -61,7 +60,7 @@
     </div>
 
     <h1>{. efficient, expressive, elegant .}</h1>
-    <div id="explain">
+    <div id="what-is-nim">
       Nim is a statically typed compiled systems programming language. It
       combines successful concepts from mature languages like Python, Ada and
       Modula.
@@ -77,18 +76,26 @@
       <a class="btn-pink" href="https://nim-lang.org/learn.html" target="_blank"
         >LEARN</a
       >
-      <a
-        class="btn-pink"
-        href="https://play.nim-lang.org/#ix=2lK1"
-        target="_blank"
-        >TRY ONLINE</a
+      <a class="btn-pink" href="https://forum.nim-lang.org" target="_blank"
+        >FORUM</a
       >
     </nav>
 
     <div id="content">
-      <div class="nim-code-example">
-        <!-- Example 1 -->
-        <pre><code class="language-nim">import strformat
+      <div class="nim-code">
+        <div class="code-editor-up">
+          <button id="nim-example1-btn" class="btn-yellow">Example 1</button>
+          <button id="nim-example2-btn" class="btn-yellow">Example 2</button>
+          <button id="nim-example3-btn" class="btn-yellow">Example 3</button>
+          <a
+            class="btn-yellow"
+            href="http://rosettacode.org/wiki/Category:Nim"
+            target="_blank"
+          >
+            More examples
+          </a>
+        </div>
+        <pre id="nim-example1"><code class="language-nim">import strformat
 
 type
   Person = object
@@ -104,8 +111,9 @@ for person in people:
   # Type-safe string interpolation,
   # evaluated at compile time.
   echo(fmt"{person.name} is {person.age} years old")</code></pre>
-        <!-- Example 2 -->
-        <pre><code class="language-nim"># Thanks to Nim's 'iterator' and 'yield' constructs,
+        <pre
+          id="nim-example2"
+        ><code class="language-nim"># Thanks to Nim's 'iterator' and 'yield' constructs,
 # iterators are as easy to write as ordinary
 # functions. They are compiled to inline loops.
 iterator oddNumbers[Idx, T](a: array[Idx, T]): T =
@@ -115,8 +123,9 @@ iterator oddNumbers[Idx, T](a: array[Idx, T]): T =
 
 for odd in oddNumbers([3, 6, 9, 12, 15, 18]):
   echo odd</code></pre>
-        <!-- Example 3 -->
-        <pre><code class="language-nim"># Use Nim's macro system to transform a dense
+        <pre
+          id="nim-example3"
+        ><code class="language-nim"># Use Nim's macro system to transform a dense
 # data-centric description of x86 instructions
 # into lookup tables that are used by
 # assemblers and JITs.
@@ -135,13 +144,12 @@ for o in opcodes:
   echo o</code></pre>
       </div>
 
-      <a
-        class="btn-pink"
-        href="http://rosettacode.org/wiki/Category:Nim"
-        target="_blank"
-      >
-        More examples at RosettaCode
-      </a>
+      <div class="nim-code">
+        <div class="code-editor-up">
+          <div class="label-yellow-filled">Try online</div>
+        </div>
+        <div class="code-editor"></div>
+      </div>
 
       <h2>{. efficient .}</h2>
       <div>
@@ -204,5 +212,7 @@ for o in opcodes:
         to some other page.
       </a>
     </div>
+
+    <script src="js/nim-code-examples.js"></script>
   </body>
 </html>

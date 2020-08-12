@@ -1,27 +1,23 @@
 {
-  "name": "rollup-test",
+  "name": "nimfrontpage-fun",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "rollup -c",
-    "dev": "rollup -c -w"
+    "start": "parcel serve ./src/index.html ./src/page/**/*.html --no-cache",
+    "build": "parcel build ./src/index.html ./src/page/**/*.html --no-cache"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.11.1",
-    "@rollup/plugin-babel": "^5.1.0",
-    "@rollup/plugin-commonjs": "^14.0.0",
-    "@rollup/plugin-node-resolve": "^8.4.0",
-    "rollup": "^2.23.1",
-    "rollup-plugin-scss": "^2.5.0",
-    "rollup-plugin-terser": "^7.0.0"
+    "parcel": "^2.0.0-beta.1",
+    "sass": "^1.26.10"
   },
   "dependencies": {
     "babel-plugin-prismjs": "^2.0.1",
-    "node-sass": "^4.14.1",
+    "codeflask": "^1.4.1",
     "prismjs": "^1.21.0"
   }
 }
