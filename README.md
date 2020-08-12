@@ -1,12 +1,15 @@
 # nimfrontpage-fun
 
 This project is made for learning purpose.  
-(learing js/ts, rollup, etc...)
+(learing js/ts, bundler, etc...)
 
 ## TODO:
 
-- [ ] Learn: Rollup.js
+- [x] Learn: Rollup
+- [ ] Learn: Parcel
+- [ ] Learn: Webpack
 - [ ] Learn: Theme switching
 - [ ] Learn: SCSS
-- [ ] Add: Code editor
+- [x] Add: Code editor (CodeFlask)
+- [ ] Add: Code editor Run
 - [ ] Add: Other pages
