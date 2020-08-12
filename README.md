@@ -1,5 +1,7 @@
 # nimfrontpage-fun
 
+https://nimfrontpage-fun.vercel.app
+
 This project is made for learning purpose.  
 (learing js/ts, bundler, etc...)
 
