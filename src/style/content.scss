@@ -1,8 +1,6 @@
 #content {
-  display: block;
   margin: 0 auto 0 auto;
   padding: 0 1.5em;
-  max-width: 51em;
 
   & > div {
     font-size: 1.3rem;
@@ -30,6 +28,6 @@
     font-size: 1.1rem;
     margin: 0 auto 0 auto;
     padding: 0.6em;
-    width: max-content;
+    max-width: max-content;
   }
 }
