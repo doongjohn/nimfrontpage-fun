@@ -6,18 +6,15 @@ export function sendHttpRequest(method, url, data) {
     const xhr = new XMLHttpRequest();
     xhr.open(method, url, true);
     xhr.responseType = 'json';
-    if (data) {
-      xhr.setRequestHeader('Content-Type', 'application/json'); // unnecessary?
-    }
     xhr.onload = () => {
       if (xhr.status >= 400) {
-        reject(xhr.status, xhr.response);
+        reject({ httpsStatus: xhr.status, response: xhr.response });
       } else {
-        resolve(xhr.status, xhr.response);
+        resolve({ httpsStatus: xhr.status, response: xhr.response });
       }
     };
     xhr.onerror = () => {
-      reject(0, '');
+      reject({ httpsStatus: 0, response: 'Error' });
     };
     xhr.send(JSON.stringify(data));
   });

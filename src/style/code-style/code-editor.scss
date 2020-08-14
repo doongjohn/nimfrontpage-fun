@@ -55,3 +55,32 @@
     border-bottom: none;
   }
 }
+
+.code-editor-down {
+  display: flex;
+  margin: 0;
+
+  & > div,
+  & > button,
+  & > a {
+    font-size: 1rem;
+    margin-top: 0.5em;
+    margin-right: 0.5em;
+    padding: 0.4em;
+  }
+}
+
+#nim-code-result {
+  font-size: 1rem;
+  margin-top: 0.5em;
+  font-family: 'JetBrains Mono';
+
+  & > div[id^='nim-result-tab'] {
+    background: #fafafa;
+    border: 0.2rem solid $color-main;
+
+    & > div {
+      padding: 1em;
+    }
+  }
+}

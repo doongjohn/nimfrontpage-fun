@@ -131,12 +131,12 @@
       this[globalName] = mainExports;
     }
   }
-})({"e86f25bd3e5d3ff6a2b4c50e403f9823":[function(require,module,exports) {
+})({"b3e82d70bc490b3d231692969cb94b8a":[function(require,module,exports) {
 var global = arguments[3];
 var HMR_HOST = null;
 var HMR_PORT = 1234;
 var HMR_ENV_HASH = "d751713988987e9331980363e24189ce";
-module.bundle.HMR_BUNDLE_ID = "eac2b94a583edea67102d28b3b420033";
+module.bundle.HMR_BUNDLE_ID = "cb6ab21dd7e6a13f76f68e81fd41a01d";
 /* global HMR_HOST, HMR_PORT, HMR_ENV_HASH */
 
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -407,8 +407,13 @@ function hmrAcceptRun(bundle, id) {
 
   acceptedAssets[id] = true;
 }
-},{}],"c00e607576b6da73f3471278d158f50f":[function(require,module,exports) {
+},{}],"03f6fc53262bd1a4c05e110fa11d036d":[function(require,module,exports) {
+// Don't use transitions on load
+// https://joshfrankel.me/blog/prevent-css-transitions-on-page-load-with-es6/
+document.addEventListener('DOMContentLoaded', () => {
+  let node = document.querySelector('.no-onload-transitions');
+  node.classList.remove('no-onload-transitions');
+});
+},{}]},{},["b3e82d70bc490b3d231692969cb94b8a","03f6fc53262bd1a4c05e110fa11d036d"], null)
 
-},{}]},{},["e86f25bd3e5d3ff6a2b4c50e403f9823","c00e607576b6da73f3471278d158f50f"], null)
-
-//# sourceMappingURL=nimfrontpage-fun.eac2b94a.js.map
+//# sourceMappingURL=postload.cb6ab21d.js.map

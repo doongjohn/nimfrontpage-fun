@@ -9,6 +9,13 @@ body {
   font-family: 'Montserrat';
 }
 
+h1,
+h2 {
+  text-align: center;
+  font-weight: bold;
+  color: rgb(63, 63, 63);
+}
+
 a {
   text-decoration: none;
 }
@@ -27,6 +34,15 @@ a {
   user-select: none;
 }
 
+.no-onload-transitions * {
+  $null-transition: none !important;
+  -webkit-transition: $null-transition;
+  -moz-transition: $null-transition;
+  -ms-transition: $null-transition;
+  -o-transition: $null-transition;
+  transition: $null-transition;
+}
+
 #deco {
   overflow: hidden;
 
@@ -39,12 +55,36 @@ a {
   }
 }
 
+.pragma {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 0.2em;
+  margin: 0 5rem;
+  font-family: 'JetBrains Mono';
+
+  &:before {
+    content: '{.';
+    font-size: 2.5rem;
+    color: rgb(180, 180, 180);
+    color: $color-sub2-flat;
+  }
+  &:after {
+    font-size: 2.5rem;
+    content: '.}';
+    color: rgb(180, 180, 180);
+    color: $color-sub2-flat;
+  }
+}
+
 .btn {
   font-family: 'JetBrains Mono';
   text-align: center;
   background-color: transparent;
   border-style: solid;
   border-width: 0.2rem;
+  transition: color ease-in-out 0.2s;
+  transition: background-color ease-in-out 0.2s;
 
   &-yellow {
     @extend .btn;
@@ -54,7 +94,6 @@ a {
     &:hover {
       color: white;
       background-color: $color-main;
-      transition: ease-in-out 0.2s;
     }
   }
 
@@ -66,7 +105,6 @@ a {
     &:hover {
       color: white;
       background-color: $color-sub1;
-      transition: ease-in-out 0.2s;
     }
   }
 
@@ -77,7 +115,6 @@ a {
 
     &:hover {
       color: $color-sub1-strong;
-      transition: ease-in-out 0.2s;
     }
   }
 }

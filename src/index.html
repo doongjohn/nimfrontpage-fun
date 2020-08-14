@@ -11,11 +11,20 @@
       crossorigin="anonymous"
     ></script>
 
+    <!-- Google Material Icon -->
+    <!-- <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    /> -->
+
+    <!-- Style -->
     <link rel="stylesheet" href="style/main.scss" />
-    <script type="module" src="index.js"></script>
+
+    <!-- Preload Script -->
+    <script src="js/preload.js"></script>
   </head>
 
-  <body>
+  <body class="no-onload-transitions">
     <div id="deco">
       <img
         class="deco-yellow-line no-drag"
@@ -59,7 +68,11 @@
       >
     </div>
 
-    <h1>{. efficient, expressive, elegant .}</h1>
+    <div class="pragma">
+      <h1>
+        efficient, expressive, elegant
+      </h1>
+    </div>
     <div id="what-is-nim">
       Nim is a statically typed compiled systems programming language. It
       combines successful concepts from mature languages like Python, Ada and
@@ -85,58 +98,48 @@
       <div class="nim-code">
         <div class="code-editor-up">
           <div class="label-yellow-filled">Examples</div>
-          <button id="nim-example1-btn" class="btn-yellow">1</button>
-          <button id="nim-example2-btn" class="btn-yellow">2</button>
-          <button id="nim-example3-btn" class="btn-yellow">3</button>
+          <button id="nim-example-btn1" class="btn-yellow">
+            1
+          </button>
+          <button id="nim-example-btn2" class="btn-yellow">
+            2
+          </button>
+          <button id="nim-example-btn3" class="btn-yellow">
+            3
+          </button>
         </div>
-        <pre id="nim-example1"><code class="language-nim">import strformat
+        <div id="nim-example-tab1" class="code-editor"></div>
+        <div id="nim-example-tab2" class="code-editor"></div>
+        <div id="nim-example-tab3" class="code-editor"></div>
+        <div class="code-editor-down"></div>
 
-type
-  Person = object
-    name: string
-    age: Natural # Ensures the age is positive
-
-let people = [
-  Person(name: "John", age: 45),
-  Person(name: "Kate", age: 30)
-]
-
-for person in people:
-  # Type-safe string interpolation,
-  # evaluated at compile time.
-  echo(fmt"{person.name} is {person.age} years old")</code></pre>
-        <pre
-          id="nim-example2"
-        ><code class="language-nim"># Thanks to Nim's 'iterator' and 'yield' constructs,
-# iterators are as easy to write as ordinary
-# functions. They are compiled to inline loops.
-iterator oddNumbers[Idx, T](a: array[Idx, T]): T =
-  for x in a:
-    if x mod 2 == 1:
-      yield x
-
-for odd in oddNumbers([3, 6, 9, 12, 15, 18]):
-  echo odd</code></pre>
-        <pre
-          id="nim-example3"
-        ><code class="language-nim"># Use Nim's macro system to transform a dense
-# data-centric description of x86 instructions
-# into lookup tables that are used by
-# assemblers and JITs.
-import macros, strutils
-
-macro toLookupTable(data: static[string]): untyped =
-  result = newTree(nnkBracket)
-  for w in data.split(';'):
-    result.add newLit(w)
-
-const
-  data = "mov;btc;cli;xor"
-  opcodes = toLookupTable(data)
-
-for o in opcodes:
-  echo o</code></pre>
+        <div id="nim-code-result">
+          <div class="code-editor-up">
+            <button id="run-nim" class="btn-yellow">
+              <i class="fas fa-play"></i> Run
+            </button>
+            <button id="nim-result-stdout-btn" class="btn-yellow">
+              stdout
+            </button>
+            <button id="nim-result-complog-btn" class="btn-yellow">
+              compile log
+            </button>
+          </div>
+          <div id="nim-result-tab1">
+            <div class="stdout"></div>
+            <div class="compile-log"></div>
+          </div>
+          <div id="nim-result-tab2">
+            <div class="stdout"></div>
+            <div class="compile-log"></div>
+          </div>
+          <div id="nim-result-tab3">
+            <div class="stdout"></div>
+            <div class="compile-log"></div>
+          </div>
+        </div>
       </div>
+
       <a
         class="btn-pink"
         href="http://rosettacode.org/wiki/Category:Nim"
@@ -145,20 +148,9 @@ for o in opcodes:
         More examples at Rosetta Code
       </a>
 
-      <div class="nim-code">
-        <div class="code-editor-up">
-          <div class="label-yellow-filled">Try online</div>
-        </div>
-        <div class="code-editor"></div>
-        <div class="code-editor-down">
-          <!-- nim-playground server is down... -->
-          <button id="run-nim" class="btn-pink" style="display: none;">
-            Run
-          </button>
-        </div>
+      <div class="pragma">
+        <h2>efficient</h2>
       </div>
-
-      <h2>{. efficient .}</h2>
       <div>
         <i class="fas fa-angle-right"></i>
         Nim generates native dependency-free executables, not dependent on a
@@ -187,7 +179,9 @@ for o in opcodes:
         that Nim can be used for all backend and frontend needs.
       </div>
 
-      <h2>{. expressive .}</h2>
+      <div class="pragma">
+        <h2>expressive</h2>
+      </div>
       <div>
         <i class="fas fa-angle-right"></i>
         Nim is self-contained: the compiler and the standard library are
@@ -199,7 +193,9 @@ for o in opcodes:
         AST, offering nearly unlimited opportunities.
       </div>
 
-      <h2>{. elegant .}</h2>
+      <div class="pragma">
+        <h2>elegant</h2>
+      </div>
       <div>
         <i class="fas fa-angle-right"></i>
         Macros cannot change Nim's syntax because there is no need for it — the
