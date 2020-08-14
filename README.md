@@ -5,13 +5,18 @@ https://nimfrontpage-fun.vercel.app
 This project is made for learning purpose.  
 (learing js/ts, bundler, etc...)
 
+## Learn:
+
+- [x] Rollup
+- [x] Parcel
+- [ ] Webpack
+- [ ] Theme switching
+- [ ] SCSS
+
 ## TODO:
 
-- [x] Learn: Rollup
-- [ ] Learn: Parcel
-- [ ] Learn: Webpack
-- [ ] Learn: Theme switching
-- [ ] Learn: SCSS
-- [x] Add: Code editor (CodeFlask)
-- [ ] Add: Code editor Run
-- [ ] Add: Other pages
+- [x] Add Code editor (use CodeFlask)
+- [x] Add Code editor Run (use nim play ground backend)
+- [ ] Add Featured Lib/Apps
+- [ ] Add Footer
+- [ ] Add Other pages
