@@ -348,19 +348,18 @@ a {
   display: flex;
   align-items: baseline;
   justify-content: center;
-  gap: 0.2em;
   margin: 0 5rem;
   font-family: "JetBrains Mono";
 }
 .pragma:before {
   content: "{.";
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   color: #b4b4b4;
   color: #b5bfd1;
 }
 .pragma:after {
-  font-size: 2.5rem;
   content: ".}";
+  font-size: 2.2rem;
   color: #b4b4b4;
   color: #b5bfd1;
 }
@@ -415,6 +414,11 @@ a {
   margin: 0 auto 0 auto;
   padding: 0 1.5em;
 }
+#content h2 {
+  font-size: 2.3rem;
+  margin-top: 2em;
+  margin-bottom: 0.5em;
+}
 #content > div {
   font-size: 1.3rem;
   margin: 1em auto 1.5em auto;
@@ -423,15 +427,6 @@ a {
 }
 #content > .nim-code {
   max-width: 55ch;
-}
-#content h2 {
-  font-size: 2.3rem;
-  margin-top: 2em;
-  margin-bottom: 0.5em;
-  font-family: "JetBrains Mono";
-  text-align: center;
-  font-weight: bold;
-  color: #3f3f3f;
 }
 #content > a {
   display: block;
@@ -510,7 +505,7 @@ h1 {
 @media only screen and (max-width: 800px) {
   h1 {
     margin: 0 0.5em 2em 0.5em;
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
 }
 

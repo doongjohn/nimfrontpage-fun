@@ -59,19 +59,18 @@ a {
   display: flex;
   align-items: baseline;
   justify-content: center;
-  gap: 0.2em;
   margin: 0 5rem;
   font-family: 'JetBrains Mono';
 
   &:before {
     content: '{.';
-    font-size: 2.5rem;
+    font-size: 2.2rem;
     color: rgb(180, 180, 180);
     color: $color-sub2-flat;
   }
   &:after {
-    font-size: 2.5rem;
     content: '.}';
+    font-size: 2.2rem;
     color: rgb(180, 180, 180);
     color: $color-sub2-flat;
   }

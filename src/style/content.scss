@@ -2,6 +2,12 @@
   margin: 0 auto 0 auto;
   padding: 0 1.5em;
 
+  h2 {
+    font-size: 2.3rem;
+    margin-top: 2em;
+    margin-bottom: 0.5em;
+  }
+
   & > div {
     font-size: 1.3rem;
     margin: 1em auto 1.5em auto;
@@ -11,16 +17,6 @@
 
   & > .nim-code {
     max-width: 55ch;
-  }
-
-  h2 {
-    font-size: 2.3rem;
-    margin-top: 2em;
-    margin-bottom: 0.5em;
-    font-family: 'JetBrains Mono';
-    text-align: center;
-    font-weight: bold;
-    color: rgb(63, 63, 63);
   }
 
   & > a {

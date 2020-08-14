@@ -63,7 +63,7 @@ const stdoutBoxes = [
 // Variables
 let curTabIndex = 0;
 var isCompiling = [false, false, false];
-const runningMsg = `<i class="fas fa-spinner fa-spin"></i> Running`;
+const runningMsg = `<i class="fas fa-spinner fa-spin"></i> Run`;
 const runMsg = `<i class="fas fa-play"></i> Run`;
 
 // Initialize
@@ -75,8 +75,6 @@ setStylesOnElement(exampleTabs.slice(1), {
   display: 'none',
 });
 
-for (let i = 0; i < 3; i++)
-  editors[i].addLanguage('nim', Prism.languages['nim']);
 editors[0].updateCode(`import strformat
 
 type
@@ -120,6 +118,8 @@ const
 
 for o in opcodes:
   echo o`);
+for (let i = 0; i < 3; i++)
+  editors[i].addLanguage('nim', Prism.languages['nim']);
 
 setStylesOnElement(stdoutButton, {
   color: 'white',
@@ -207,7 +207,7 @@ runButton.onclick = () => {
 
   let resultTabIndex = curTabIndex;
 
-  HttpUtils.sendHttpRequestPost('https://play.nim-lang.org/compile', {
+  HttpUtils.sendHttpRequestPost('https://play.nim-lang.org/compile', null, {
     code: editors[curTabIndex].getCode(),
     compilationTarget: 'c',
     outputFormat: 'HTML',

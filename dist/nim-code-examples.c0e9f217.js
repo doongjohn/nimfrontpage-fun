@@ -455,7 +455,7 @@ const stdoutBoxes = [resultTabs[0].getElementsByClassName('stdout')[0], resultTa
 
 let curTabIndex = 0;
 var isCompiling = [false, false, false];
-const runningMsg = `<i class="fas fa-spinner fa-spin"></i> Running`;
+const runningMsg = `<i class="fas fa-spinner fa-spin"></i> Run`;
 const runMsg = `<i class="fas fa-play"></i> Run`; // Initialize
 
 setStylesOnElement(exampleButtons[0], {
@@ -465,9 +465,6 @@ setStylesOnElement(exampleButtons[0], {
 setStylesOnElement(exampleTabs.slice(1), {
   display: 'none'
 });
-
-for (let i = 0; i < 3; i++) editors[i].addLanguage('nim', _prismCore.default.languages['nim']);
-
 editors[0].updateCode(`import strformat
 
 type
@@ -511,6 +508,9 @@ const
 
 for o in opcodes:
   echo o`);
+
+for (let i = 0; i < 3; i++) editors[i].addLanguage('nim', _prismCore.default.languages['nim']);
+
 setStylesOnElement(stdoutButton, {
   color: 'white',
   backgroundColor: colorMain
@@ -599,7 +599,7 @@ runButton.onclick = () => {
   runButton.innerHTML = runningMsg;
   let resultTabIndex = curTabIndex;
 
-  _httputils.default.sendHttpRequestPost('https://play.nim-lang.org/compile', {
+  _httputils.default.sendHttpRequestPost('https://play.nim-lang.org/compile', null, {
     code: editors[curTabIndex].getCode(),
     compilationTarget: 'c',
     outputFormat: 'HTML' // version: 'latest',
@@ -2581,26 +2581,30 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.sendHttpRequest = sendHttpRequest;
+exports.sendHttpRequestGet = sendHttpRequestGet;
 exports.sendHttpRequestPost = sendHttpRequestPost;
 exports.default = void 0;
 
 // TODO: Use fetch API instead?
-function sendHttpRequest(method, url, data) {
-  console.log('sending a request...');
+function sendHttpRequest(method, url, headers, data) {
   return new Promise((resolve, reject) => {
     const xhr = new XMLHttpRequest();
     xhr.open(method, url, true);
     xhr.responseType = 'json';
 
+    if (headers && Array.isArray(headers)) {
+      for (let i = 0; i < headers.length; i++) xhr.setRequestHeader(headers[i].name, headers[i].value);
+    }
+
     xhr.onload = () => {
       if (xhr.status >= 400) {
         reject({
-          httpsStatus: xhr.status,
+          httpStatus: xhr.status,
           response: xhr.response
         });
       } else {
         resolve({
-          httpsStatus: xhr.status,
+          httpStatus: xhr.status,
           response: xhr.response
         });
       }
@@ -2608,7 +2612,7 @@ function sendHttpRequest(method, url, data) {
 
     xhr.onerror = () => {
       reject({
-        httpsStatus: 0,
+        httpStatus: 0,
         response: 'Error'
       });
     };
@@ -2617,12 +2621,17 @@ function sendHttpRequest(method, url, data) {
   });
 }
 
+function sendHttpRequestGet(url, headers) {
+  return sendHttpRequest('GET', url, headers);
+}
+
 function sendHttpRequestPost(url, headers, data) {
   return sendHttpRequest('POST', url, headers, data);
 }
 
 var _default = {
   sendHttpRequest,
+  sendHttpRequestGet,
   sendHttpRequestPost
 };
 exports.default = _default;
