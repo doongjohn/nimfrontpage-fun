@@ -16,7 +16,7 @@ This project is made for learning purpose.
 ## TODO:
 
 - [x] Add Code editor (use CodeFlask)
-- [x] Add Code editor Run (use nim play ground backend)
+- [x] Add Code editor Run (use nim playground backend)
 - [ ] Add Featured Lib/Apps
 - [ ] Add Footer
 - [ ] Add Other pages
