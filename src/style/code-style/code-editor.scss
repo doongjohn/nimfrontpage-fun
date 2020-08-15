@@ -6,6 +6,7 @@
   .codeflask {
     position: relative;
     background-color: #fafafa;
+    // background: #2a2734; // TODO (Theme Switching)
     min-height: 3.3em;
 
     .codeflask__textarea {
@@ -24,6 +25,9 @@
       &::selection {
         background: #cceae7;
         color: #263238;
+
+        // text-shadow: none;
+        // background: #90b7ff;
       }
       // ------------------------------
     }
