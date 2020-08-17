@@ -1,16 +1,16 @@
 #nim-logo {
   display: grid;
   place-items: center;
-  margin-top: 3.5rem;
-  margin-bottom: 1rem;
+  padding-top: 3.5rem;
+  padding-bottom: 2rem;
 
   img {
-    animation: updown 2.5s;
+    animation: up-down 2.5s;
     animation-timing-function: ease-in-out;
     animation-iteration-count: infinite;
   }
 
-  @keyframes updown {
+  @keyframes up-down {
     0% {
       transform: translateY(1rem);
     }
@@ -48,6 +48,7 @@
   @media only screen and (max-width: 800px) {
     flex-direction: column;
     align-items: center;
+    margin-bottom: 3em;
 
     .release-btn {
       flex: 0 1 1.2em;
@@ -59,7 +60,7 @@
         margin: 1em 3em 0.5em 3em;
       }
       &:last-child {
-        margin: 0 3em 4em 3em;
+        margin: 0 3em;
       }
     }
   }
@@ -88,10 +89,7 @@ h1 {
   position: fixed;
   top: 1rem;
   right: 1rem;
-
-  & > a {
-    font-size: 2.5rem;
-  }
+  font-size: 2.5rem;
 
   @media only screen and (max-width: 800px) {
     position: absolute;
@@ -112,11 +110,12 @@ h1 {
 
   @media only screen and (max-width: 800px) {
     flex-direction: column;
-    margin: 0 1em;
+    margin-right: 2rem;
+    margin-left: 2rem;
 
     a {
       flex: 0 1 1.5em;
-      margin: 0.3em 0.3em;
+      margin: 0.3rem 0;
       line-height: 1.5em;
     }
   }

@@ -408,12 +408,12 @@ function hmrAcceptRun(bundle, id) {
   acceptedAssets[id] = true;
 }
 },{}],"03f6fc53262bd1a4c05e110fa11d036d":[function(require,module,exports) {
-// Don't use transitions on load
-// https://joshfrankel.me/blog/prevent-css-transitions-on-page-load-with-es6/
-document.addEventListener('DOMContentLoaded', () => {
-  let node = document.querySelector('.no-onload-transitions');
-  node.classList.remove('no-onload-transitions');
-});
+function removeUseJavaScriptMsg() {
+  let node = document.getElementById('use-js-msg');
+  document.body.removeChild(node);
+}
+
+removeUseJavaScriptMsg();
 },{}]},{},["b3e82d70bc490b3d231692969cb94b8a","03f6fc53262bd1a4c05e110fa11d036d"], null)
 
 //# sourceMappingURL=postload.cb6ab21d.js.map

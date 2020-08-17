@@ -1,20 +1,26 @@
 ::selection {
-  color: rgb(255, 255, 255);
-  background: rgb(255, 52, 79);
+  color: rgb(243, 243, 243);
+  background: rgb(255, 55, 81);
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-  margin: 0;
-  padding: 0;
   font-family: 'Montserrat';
-  background-color: rgb(251, 254, 255);
+  color: #3f3f3f;
+  background-color: #fafafa;
 }
 
 h1,
 h2 {
   text-align: center;
   font-weight: bold;
-  color: rgb(63, 63, 63);
+  color: #3f3f3f;
 }
 
 a {
@@ -44,6 +50,13 @@ a {
   transition: $null-transition;
 }
 
+#bg-filter {
+  z-index: -10;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+}
+
 #deco {
   overflow: hidden;
 
@@ -56,12 +69,26 @@ a {
   }
 }
 
+#use-js-msg {
+  z-index: 9999;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  font-size: 1.2rem;
+  padding: 1em;
+  font-weight: bold;
+  text-align: center;
+  color: white;
+  background-color: #ffb7d4;
+}
+
 .pragma {
   display: flex;
   align-items: baseline;
   justify-content: center;
   margin: 0 5rem;
   font-family: 'JetBrains Mono';
+  font-weight: bold;
 
   &:before {
     content: '{.';

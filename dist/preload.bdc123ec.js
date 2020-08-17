@@ -408,12 +408,13 @@ function hmrAcceptRun(bundle, id) {
   acceptedAssets[id] = true;
 }
 },{}],"cde58254045aaa09211b9c5a491eef08":[function(require,module,exports) {
-// Don't use transitions on load
-// https://joshfrankel.me/blog/prevent-css-transitions-on-page-load-with-es6/
-// https://developer.mozilla.org/en-US/docs/Web/API/Document/DOMContentLoaded_event
-window.addEventListener('load', () => {
+function removeNoOnloadTransitions() {
   let node = document.querySelector('.no-onload-transitions');
   node.classList.remove('no-onload-transitions');
+}
+
+window.addEventListener('load', () => {
+  removeNoOnloadTransitions();
 });
 },{}]},{},["e4c157e50a5e8982252a3f01542a6f0b","cde58254045aaa09211b9c5a491eef08"], null)
 

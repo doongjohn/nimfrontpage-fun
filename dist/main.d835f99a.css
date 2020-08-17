@@ -216,24 +216,19 @@ pre[class*=language-] {
   color: #e53935;
 }
 
-.code-editor {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 .code-editor .codeflask {
   position: relative;
-  background-color: #fafafa;
   min-height: 3.3em;
+  background-color: #fafafa;
 }
 .code-editor .codeflask .codeflask__textarea {
   z-index: 1;
   color: transparent;
   overflow-y: hidden;
   font-size: 1.1rem;
-  padding: 1em;
   font-family: "JetBrains Mono";
   line-height: 1.5em;
+  padding: 1em;
   border: 0.2rem solid #ffd382;
 }
 .code-editor .codeflask .codeflask__textarea::selection {
@@ -244,10 +239,6 @@ pre[class*=language-] {
   z-index: 0;
   width: max-content;
   border: 0.2rem solid transparent;
-}
-.code-editor .codeflask code[class*=language-],
-.code-editor .codeflask pre[class*=language-] {
-  background-color: transparent;
 }
 
 .code-editor-up {
@@ -273,29 +264,42 @@ pre[class*=language-] {
   padding: 0.4em;
 }
 
-#nim-code-result {
-  font-size: 1rem;
+.code-result {
+  font-size: 1.1rem;
   margin-top: 0.5em;
   font-family: "JetBrains Mono";
 }
-#nim-code-result > div[id^=nim-result-tab] {
+.code-result > div[id^=nim-result-tab] {
   background: #fafafa;
   border: 0.2rem solid #ffd382;
 }
-#nim-code-result > div[id^=nim-result-tab] > div {
+.code-result > div[id^=nim-result-tab] > div {
   padding: 1em;
+}
+.code-result > div[id^=nim-result-tab] > .stdout {
+  white-space: nowrap;
+  overflow-x: auto;
+}
+.code-result > div[id^=nim-result-tab] > .compile-log {
+  word-wrap: break-word;
 }
 
 ::selection {
-  color: white;
-  background: #ff344f;
+  color: #f3f3f3;
+  background: #ff3751;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-  margin: 0;
-  padding: 0;
   font-family: "Montserrat";
-  background-color: #fbfeff;
+  color: #3f3f3f;
+  background-color: #fafafa;
 }
 
 h1,
@@ -334,6 +338,13 @@ a {
   transition: none !important;
 }
 
+#bg-filter {
+  z-index: -10;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+}
+
 #deco {
   overflow: hidden;
 }
@@ -345,12 +356,26 @@ a {
   transform: translateX(-50%);
 }
 
+#use-js-msg {
+  z-index: 9999;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  font-size: 1.2rem;
+  padding: 1em;
+  font-weight: bold;
+  text-align: center;
+  color: white;
+  background-color: #ffb7d4;
+}
+
 .pragma {
   display: flex;
   align-items: baseline;
   justify-content: center;
   margin: 0 5rem;
   font-family: "JetBrains Mono";
+  font-weight: bold;
 }
 .pragma:before {
   content: "{.";
@@ -413,7 +438,7 @@ a {
 
 #content {
   margin: 0 auto 0 auto;
-  padding: 0 1.5em;
+  padding: 0 2rem;
 }
 #content h2 {
   font-size: 2.3rem;
@@ -426,12 +451,12 @@ a {
   max-width: 50ch;
   color: #2b2b2b;
 }
-#content > .nim-code {
-  max-width: 55ch;
+#content > .code {
+  max-width: 65ch;
 }
 #content > a {
   display: block;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   margin: 0 auto 0 auto;
   padding: 0.6em;
   max-width: max-content;
@@ -440,15 +465,15 @@ a {
 #nim-logo {
   display: grid;
   place-items: center;
-  margin-top: 3.5rem;
-  margin-bottom: 1rem;
+  padding-top: 3.5rem;
+  padding-bottom: 2rem;
 }
 #nim-logo img {
-  animation: updown 2.5s;
+  animation: up-down 2.5s;
   animation-timing-function: ease-in-out;
   animation-iteration-count: infinite;
 }
-@keyframes updown {
+@keyframes up-down {
   0% {
     transform: translateY(1rem);
   }
@@ -484,6 +509,7 @@ a {
   #releases {
     flex-direction: column;
     align-items: center;
+    margin-bottom: 3em;
   }
   #releases .release-btn {
     flex: 0 1 1.2em;
@@ -495,7 +521,7 @@ a {
     margin: 1em 3em 0.5em 3em;
   }
   #releases .release-btn:last-child {
-    margin: 0 3em 4em 3em;
+    margin: 0 3em;
   }
 }
 
@@ -523,8 +549,6 @@ h1 {
   position: fixed;
   top: 1rem;
   right: 1rem;
-}
-#floating-nav > a {
   font-size: 2.5rem;
 }
 @media only screen and (max-width: 800px) {
@@ -547,11 +571,12 @@ h1 {
 @media only screen and (max-width: 800px) {
   #short-nav {
     flex-direction: column;
-    margin: 0 1em;
+    margin-right: 2rem;
+    margin-left: 2rem;
   }
   #short-nav a {
     flex: 0 1 1.5em;
-    margin: 0.3em 0.3em;
+    margin: 0.3rem 0;
     line-height: 1.5em;
   }
 }

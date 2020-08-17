@@ -28,9 +28,15 @@
     <div id="deco">
       <img
         class="deco-yellow-line no-drag"
-        src="assets/yellow-line.svg"
+        src="assets/yellow-bg-deco.svg"
         alt=""
       />
+    </div>
+
+    <div id="bg-filter"></div>
+
+    <div id="use-js-msg">
+      This page needs JavaScript enabled to work properly!
     </div>
 
     <div id="floating-nav">
@@ -98,7 +104,7 @@
     </nav>
 
     <div id="content">
-      <div class="nim-code">
+      <div class="code">
         <div class="code-editor-up">
           <div class="label-yellow-filled">Examples</div>
           <button id="nim-example-btn1" class="btn-yellow">
@@ -114,9 +120,8 @@
         <div id="nim-example-tab1" class="code-editor"></div>
         <div id="nim-example-tab2" class="code-editor"></div>
         <div id="nim-example-tab3" class="code-editor"></div>
-        <div class="code-editor-down"></div>
 
-        <div id="nim-code-result">
+        <div class="code-result">
           <div class="code-editor-up">
             <button id="run-nim" class="btn-yellow">
               <i class="fas fa-play"></i> Run
@@ -148,7 +153,7 @@
         href="http://rosettacode.org/wiki/Category:Nim"
         target="_blank"
       >
-        More examples at Rosetta Code
+        More examples
       </a>
 
       <div class="pragma">
@@ -221,5 +226,6 @@
 
     <script src="js/nim-code-examples.js"></script>
     <script src="js/getrelease.js"></script>
+    <script src="js/postload.js"></script>
   </body>
 </html>
