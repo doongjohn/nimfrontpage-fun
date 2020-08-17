@@ -50,13 +50,6 @@ a {
   transition: $null-transition;
 }
 
-#bg-filter {
-  z-index: -10;
-  position: fixed;
-  width: 100%;
-  height: 100%;
-}
-
 #deco {
   overflow: hidden;
 
@@ -93,13 +86,11 @@ a {
   &:before {
     content: '{.';
     font-size: 2.2rem;
-    color: rgb(180, 180, 180);
     color: $color-sub2-flat;
   }
   &:after {
     content: '.}';
     font-size: 2.2rem;
-    color: rgb(180, 180, 180);
     color: $color-sub2-flat;
   }
 }

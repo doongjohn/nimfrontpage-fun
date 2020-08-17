@@ -338,13 +338,6 @@ a {
   transition: none !important;
 }
 
-#bg-filter {
-  z-index: -10;
-  position: fixed;
-  width: 100%;
-  height: 100%;
-}
-
 #deco {
   overflow: hidden;
 }
@@ -380,13 +373,11 @@ a {
 .pragma:before {
   content: "{.";
   font-size: 2.2rem;
-  color: #b4b4b4;
   color: #b5bfd1;
 }
 .pragma:after {
   content: ".}";
   font-size: 2.2rem;
-  color: #b4b4b4;
   color: #b5bfd1;
 }
 
