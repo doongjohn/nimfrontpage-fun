@@ -1,8 +1,3 @@
-::selection {
-  color: rgb(243, 243, 243);
-  background: rgb(255, 55, 81);
-}
-
 html,
 body {
   height: 100%;
@@ -12,20 +7,19 @@ body {
 
 body {
   font-family: 'Montserrat';
+  font-family: 'Varela Round';
   color: #3f3f3f;
   background-color: #fafafa;
   background-color: white;
 }
 
-h1,
-h2 {
-  text-align: center;
-  font-weight: bold;
-  color: #3f3f3f;
-}
-
 a {
   text-decoration: none;
+}
+
+::selection {
+  color: white;
+  background: rgba(255, 55, 82, 0.5);
 }
 
 .no-drag {
@@ -51,18 +45,6 @@ a {
   transition: $null-transition;
 }
 
-#deco {
-  overflow: hidden;
-
-  .deco-yellow-line {
-    z-index: -100;
-    position: fixed;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-}
-
 #use-js-msg {
   z-index: 9999;
   position: fixed;
@@ -73,26 +55,6 @@ a {
   text-align: center;
   color: white;
   background-color: #49494941;
-}
-
-.pragma {
-  display: flex;
-  align-items: baseline;
-  justify-content: center;
-  margin: 0 5rem;
-  font-family: 'JetBrains Mono';
-  font-weight: bold;
-
-  &:before {
-    content: '{.';
-    font-size: 2.2rem;
-    color: $color-sub2-flat;
-  }
-  &:after {
-    content: '.}';
-    font-size: 2.2rem;
-    color: $color-sub2-flat;
-  }
 }
 
 .btn {
@@ -149,5 +111,25 @@ a {
     color: white;
     background-color: $color-main;
     border-color: $color-main;
+  }
+}
+
+.pragma {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  margin: 0 5rem;
+  font-family: 'JetBrains Mono';
+  font-weight: bold;
+
+  &:before {
+    content: '{.';
+    font-size: 2.2rem;
+    color: $color-sub2-flat;
+  }
+  &:after {
+    content: '.}';
+    font-size: 2.2rem;
+    color: $color-sub2-flat;
   }
 }

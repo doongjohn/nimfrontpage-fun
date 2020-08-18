@@ -1,3 +1,27 @@
+#deco {
+  overflow: hidden;
+
+  .deco-yellow-line {
+    z-index: -100;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+#floating-nav {
+  z-index: 100;
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  font-size: 2.5rem;
+
+  @media only screen and (max-width: 800px) {
+    position: absolute;
+  }
+}
+
 #nim-logo {
   display: grid;
   place-items: center;
@@ -26,18 +50,17 @@
 #releases {
   display: flex;
   justify-content: center;
+  font-size: 1rem;
+  font-family: 'JetBrains Mono';
 
   .release-btn {
-    font-size: 1rem;
     flex: 0 1 11em;
     margin: 1.5em;
     padding: 0.5em;
-    font-family: 'JetBrains Mono';
     text-align: center;
     color: white;
     background-color: #cecece;
-    border-radius: 1em;
-    box-shadow: none;
+    border-radius: 1.5em;
 
     &:hover {
       background-color: #b8b8b8;
@@ -66,9 +89,16 @@
   }
 }
 
+h1,
+h2 {
+  text-align: center;
+  font-weight: bold;
+  color: #333333;
+}
+
 h1 {
-  font-size: 2.2rem;
-  margin-bottom: 2em;
+  font-size: 2.5rem;
+  margin-bottom: 1.5em;
 
   @media only screen and (max-width: 800px) {
     margin: 0 0.5em 2em 0.5em;
@@ -77,29 +107,17 @@ h1 {
 }
 
 #what-is-nim {
-  margin: 0 auto 3em auto;
+  margin: 0 auto 2.5em auto;
   padding: 0 1.5em;
   max-width: 44ch;
   font-weight: normal;
   font-size: 1.4rem;
 }
 
-#floating-nav {
-  z-index: 100;
-  position: fixed;
-  top: 1rem;
-  right: 1rem;
-  font-size: 2.5rem;
-
-  @media only screen and (max-width: 800px) {
-    position: absolute;
-  }
-}
-
 #short-nav {
   display: flex;
   justify-content: center;
-  margin-bottom: 3em;
+  margin-bottom: 4em;
 
   a {
     font-size: 1.5rem;

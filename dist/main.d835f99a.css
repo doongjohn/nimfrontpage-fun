@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Varela+Round&display=swap");
 @font-face {
   font-family: "JetBrains Mono";
   src: url("https://cdn.jsdelivr.net/gh/JetBrains/JetBrainsMono/web/woff2/JetBrainsMono-Regular.woff2") format("woff2"), url("https://cdn.jsdelivr.net/gh/JetBrains/JetBrainsMono/web/woff/JetBrainsMono-Regular.woff") format("woff");
@@ -284,11 +285,6 @@ pre[class*=language-] {
   word-wrap: break-word;
 }
 
-::selection {
-  color: #f3f3f3;
-  background: #ff3751;
-}
-
 html,
 body {
   height: 100%;
@@ -298,20 +294,19 @@ body {
 
 body {
   font-family: "Montserrat";
+  font-family: "Varela Round";
   color: #3f3f3f;
   background-color: #fafafa;
   background-color: white;
 }
 
-h1,
-h2 {
-  text-align: center;
-  font-weight: bold;
-  color: #3f3f3f;
-}
-
 a {
   text-decoration: none;
+}
+
+::selection {
+  color: white;
+  background: rgba(255, 55, 82, 0.5);
 }
 
 .no-drag {
@@ -339,17 +334,6 @@ a {
   transition: none !important;
 }
 
-#deco {
-  overflow: hidden;
-}
-#deco .deco-yellow-line {
-  z-index: -100;
-  position: fixed;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
 #use-js-msg {
   z-index: 9999;
   position: fixed;
@@ -360,25 +344,6 @@ a {
   text-align: center;
   color: white;
   background-color: #49494941;
-}
-
-.pragma {
-  display: flex;
-  align-items: baseline;
-  justify-content: center;
-  margin: 0 5rem;
-  font-family: "JetBrains Mono";
-  font-weight: bold;
-}
-.pragma:before {
-  content: "{.";
-  font-size: 2.2rem;
-  color: #b5bfd1;
-}
-.pragma:after {
-  content: ".}";
-  font-size: 2.2rem;
-  color: #b5bfd1;
 }
 
 .btn, .label-yellow-filled, .btn-pink-textonly, .btn-pink, .btn-yellow {
@@ -427,6 +392,25 @@ a {
   border-color: #ffd782;
 }
 
+.pragma {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  margin: 0 5rem;
+  font-family: "JetBrains Mono";
+  font-weight: bold;
+}
+.pragma:before {
+  content: "{.";
+  font-size: 2.2rem;
+  color: #c0cadd;
+}
+.pragma:after {
+  content: ".}";
+  font-size: 2.2rem;
+  color: #c0cadd;
+}
+
 #content {
   margin: 0 auto 0 auto;
   padding: 0 2rem;
@@ -451,6 +435,30 @@ a {
   margin: 0 auto 0 auto;
   padding: 0.6em;
   max-width: max-content;
+}
+
+#deco {
+  overflow: hidden;
+}
+#deco .deco-yellow-line {
+  z-index: -100;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+#floating-nav {
+  z-index: 100;
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  font-size: 2.5rem;
+}
+@media only screen and (max-width: 800px) {
+  #floating-nav {
+    position: absolute;
+  }
 }
 
 #nim-logo {
@@ -479,18 +487,17 @@ a {
 #releases {
   display: flex;
   justify-content: center;
+  font-size: 1rem;
+  font-family: "JetBrains Mono";
 }
 #releases .release-btn {
-  font-size: 1rem;
   flex: 0 1 11em;
   margin: 1.5em;
   padding: 0.5em;
-  font-family: "JetBrains Mono";
   text-align: center;
   color: white;
   background-color: #cecece;
-  border-radius: 1em;
-  box-shadow: none;
+  border-radius: 1.5em;
 }
 #releases .release-btn:hover {
   background-color: #b8b8b8;
@@ -516,9 +523,16 @@ a {
   }
 }
 
+h1,
+h2 {
+  text-align: center;
+  font-weight: bold;
+  color: #333333;
+}
+
 h1 {
-  font-size: 2.2rem;
-  margin-bottom: 2em;
+  font-size: 2.5rem;
+  margin-bottom: 1.5em;
 }
 @media only screen and (max-width: 800px) {
   h1 {
@@ -528,30 +542,17 @@ h1 {
 }
 
 #what-is-nim {
-  margin: 0 auto 3em auto;
+  margin: 0 auto 2.5em auto;
   padding: 0 1.5em;
   max-width: 44ch;
   font-weight: normal;
   font-size: 1.4rem;
 }
 
-#floating-nav {
-  z-index: 100;
-  position: fixed;
-  top: 1rem;
-  right: 1rem;
-  font-size: 2.5rem;
-}
-@media only screen and (max-width: 800px) {
-  #floating-nav {
-    position: absolute;
-  }
-}
-
 #short-nav {
   display: flex;
   justify-content: center;
-  margin-bottom: 3em;
+  margin-bottom: 4em;
 }
 #short-nav a {
   font-size: 1.5rem;
