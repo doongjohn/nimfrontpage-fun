@@ -7,7 +7,7 @@
   font-display: swap;
 }
 pre[class*=language-] {
-  border: 0.2rem solid #ffd382;
+  border: 0.2rem solid #ffd782;
 }
 
 code[class*=language-],
@@ -229,7 +229,7 @@ pre[class*=language-] {
   font-family: "JetBrains Mono";
   line-height: 1.5em;
   padding: 1em;
-  border: 0.2rem solid #ffd382;
+  border: 0.2rem solid #ffd782;
 }
 .code-editor .codeflask .codeflask__textarea::selection {
   background: #cceae7;
@@ -271,7 +271,7 @@ pre[class*=language-] {
 }
 .code-result > div[id^=nim-result-tab] {
   background: #fafafa;
-  border: 0.2rem solid #ffd382;
+  border: 0.2rem solid #ffd782;
 }
 .code-result > div[id^=nim-result-tab] > div {
   padding: 1em;
@@ -353,14 +353,13 @@ a {
 #use-js-msg {
   z-index: 9999;
   position: fixed;
-  top: 0;
-  width: 100%;
   font-size: 1.2rem;
-  padding: 1em;
+  padding: 1.5em;
+  width: 100%;
   font-weight: bold;
   text-align: center;
   color: white;
-  background-color: #ffb7d4;
+  background-color: #49494941;
 }
 
 .pragma {
@@ -392,12 +391,12 @@ a {
   transition: background-color ease-in-out 0.2s;
 }
 .btn-yellow {
-  color: #f5c05e;
-  border-color: #ffd382;
+  color: #ffc251;
+  border-color: #ffd782;
 }
 .btn-yellow:hover {
   color: white;
-  background-color: #ffd382;
+  background-color: #ffd782;
 }
 .btn-pink {
   color: #ff6b6b;
@@ -424,8 +423,8 @@ a {
 }
 .label-yellow-filled {
   color: white;
-  background-color: #ffd382;
-  border-color: #ffd382;
+  background-color: #ffd782;
+  border-color: #ffd782;
 }
 
 #content {

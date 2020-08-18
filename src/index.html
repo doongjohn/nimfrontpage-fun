@@ -25,16 +25,17 @@
   </head>
 
   <body class="no-onload-transitions">
+    <div id="use-js-msg">
+      This page needs JavaScript enabled to work properly!
+    </div>
+    <script src="js/check-js.js"></script>
+
     <div id="deco">
       <img
         class="deco-yellow-line no-drag"
         src="assets/yellow-bg-deco.svg"
         alt=""
       />
-    </div>
-
-    <div id="use-js-msg">
-      This page needs JavaScript enabled to work properly!
     </div>
 
     <div id="floating-nav">
@@ -48,11 +49,7 @@
     </div>
 
     <div id="nim-logo" class="no-select">
-      <img
-        class="no-drag"
-        src="https://forum.nim-lang.org/images/logo.png"
-        alt="nim"
-      />
+      <img class="no-drag" src="assets/NimLogo.svg" alt="nim" />
     </div>
 
     <div id="releases">
@@ -222,8 +219,7 @@
       </a>
     </div>
 
-    <script src="js/nim-code-examples.js"></script>
+    <script src="js/nim-playground.js"></script>
     <script src="js/getrelease.js"></script>
-    <script src="js/postload.js"></script>
   </body>
 </html>

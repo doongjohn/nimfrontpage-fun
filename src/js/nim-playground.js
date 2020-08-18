@@ -2,8 +2,8 @@ import Prism from 'prismjs';
 import CodeFlask from 'codeflask';
 import HttpUtils from './httputils.js';
 
-const colorMain = '#ffd382';
-const colorMainStrong = '#f5c05e';
+const colorMain = '#ffd782';
+const colorMainStrong = '#ffc251';
 
 const setStylesOnElement = (element, styles) => {
   if (Array.isArray(element)) {
